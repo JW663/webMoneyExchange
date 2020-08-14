@@ -1,0 +1,482 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A33B831F-9A33-49C8-8AC9-7AA0A1C0ADD1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>webMoneyExchange</RootNamespace>
+    <AssemblyName>webMoneyExchange</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account.aspx" />
+    <Content Include="AddAccount.aspx" />
+    <Content Include="AddCurrency.aspx" />
+    <Content Include="AdminHomePage.aspx" />
+    <Content Include="CreateAccount.aspx" />
+    <Content Include="Currency.aspx" />
+    <Content Include="CurrencyBuying.aspx" />
+    <Content Include="CurrencySelling.aspx" />
+    <Content Include="Deposit.aspx" />
+    <Content Include="Forbidden.aspx" />
+    <Content Include="forgotpassword.aspx" />
+    <Content Include="pexels-marta-branco-1263324.jpg" />
+    <Content Include="pexels-pixabay-534216.jpg" />
+    <Content Include="UserHomePage.aspx" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="logo.jpg" />
+    <Content Include="TransactionHistory.aspx" />
+    <Content Include="TransactionReport.aspx" />
+    <Content Include="UpdateAccount.aspx" />
+    <Content Include="UpdateCurrency.aspx" />
+    <Content Include="ViewAccount.aspx" />
+    <Content Include="ViewCurrency.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Withdrawal.aspx" />
+    <Content Include="wp4715700.jpg" />
+    <Content Include="wwwroot\lib\bootstrap-datetimepicker\css\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="wwwroot\lib\bootstrap-datetimepicker\css\bootstrap-datetimepicker-standalone.min.css" />
+    <Content Include="wwwroot\lib\bootstrap-datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="wwwroot\lib\bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="wwwroot\lib\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="wwwroot\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="wwwroot\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="wwwroot\lib\core-js\core.js" />
+    <Content Include="wwwroot\lib\core-js\core.min.js" />
+    <Content Include="wwwroot\lib\core-js\library.js" />
+    <Content Include="wwwroot\lib\core-js\library.min.js" />
+    <Content Include="wwwroot\lib\core-js\shim.js" />
+    <Content Include="wwwroot\lib\core-js\shim.min.js" />
+    <Content Include="wwwroot\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="wwwroot\lib\jquery\jquery.min.js" />
+    <Content Include="wwwroot\lib\jquery\jquery.validate.min.js" />
+    <Content Include="wwwroot\lib\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="wwwroot\lib\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="wwwroot\lib\moment\locale\af.js" />
+    <Content Include="wwwroot\lib\moment\locale\ar-dz.js" />
+    <Content Include="wwwroot\lib\moment\locale\ar-kw.js" />
+    <Content Include="wwwroot\lib\moment\locale\ar-ly.js" />
+    <Content Include="wwwroot\lib\moment\locale\ar-ma.js" />
+    <Content Include="wwwroot\lib\moment\locale\ar-sa.js" />
+    <Content Include="wwwroot\lib\moment\locale\ar-tn.js" />
+    <Content Include="wwwroot\lib\moment\locale\ar.js" />
+    <Content Include="wwwroot\lib\moment\locale\az.js" />
+    <Content Include="wwwroot\lib\moment\locale\be.js" />
+    <Content Include="wwwroot\lib\moment\locale\bg.js" />
+    <Content Include="wwwroot\lib\moment\locale\bm.js" />
+    <Content Include="wwwroot\lib\moment\locale\bn.js" />
+    <Content Include="wwwroot\lib\moment\locale\bo.js" />
+    <Content Include="wwwroot\lib\moment\locale\br.js" />
+    <Content Include="wwwroot\lib\moment\locale\bs.js" />
+    <Content Include="wwwroot\lib\moment\locale\ca.js" />
+    <Content Include="wwwroot\lib\moment\locale\cs.js" />
+    <Content Include="wwwroot\lib\moment\locale\cv.js" />
+    <Content Include="wwwroot\lib\moment\locale\cy.js" />
+    <Content Include="wwwroot\lib\moment\locale\da.js" />
+    <Content Include="wwwroot\lib\moment\locale\de-at.js" />
+    <Content Include="wwwroot\lib\moment\locale\de-ch.js" />
+    <Content Include="wwwroot\lib\moment\locale\de.js" />
+    <Content Include="wwwroot\lib\moment\locale\dv.js" />
+    <Content Include="wwwroot\lib\moment\locale\el.js" />
+    <Content Include="wwwroot\lib\moment\locale\en-au.js" />
+    <Content Include="wwwroot\lib\moment\locale\en-ca.js" />
+    <Content Include="wwwroot\lib\moment\locale\en-gb.js" />
+    <Content Include="wwwroot\lib\moment\locale\en-ie.js" />
+    <Content Include="wwwroot\lib\moment\locale\en-il.js" />
+    <Content Include="wwwroot\lib\moment\locale\en-nz.js" />
+    <Content Include="wwwroot\lib\moment\locale\en-SG.js" />
+    <Content Include="wwwroot\lib\moment\locale\eo.js" />
+    <Content Include="wwwroot\lib\moment\locale\es-do.js" />
+    <Content Include="wwwroot\lib\moment\locale\es-us.js" />
+    <Content Include="wwwroot\lib\moment\locale\es.js" />
+    <Content Include="wwwroot\lib\moment\locale\et.js" />
+    <Content Include="wwwroot\lib\moment\locale\eu.js" />
+    <Content Include="wwwroot\lib\moment\locale\fa.js" />
+    <Content Include="wwwroot\lib\moment\locale\fi.js" />
+    <Content Include="wwwroot\lib\moment\locale\fo.js" />
+    <Content Include="wwwroot\lib\moment\locale\fr-ca.js" />
+    <Content Include="wwwroot\lib\moment\locale\fr-ch.js" />
+    <Content Include="wwwroot\lib\moment\locale\fr.js" />
+    <Content Include="wwwroot\lib\moment\locale\fy.js" />
+    <Content Include="wwwroot\lib\moment\locale\ga.js" />
+    <Content Include="wwwroot\lib\moment\locale\gd.js" />
+    <Content Include="wwwroot\lib\moment\locale\gl.js" />
+    <Content Include="wwwroot\lib\moment\locale\gom-latn.js" />
+    <Content Include="wwwroot\lib\moment\locale\gu.js" />
+    <Content Include="wwwroot\lib\moment\locale\he.js" />
+    <Content Include="wwwroot\lib\moment\locale\hi.js" />
+    <Content Include="wwwroot\lib\moment\locale\hr.js" />
+    <Content Include="wwwroot\lib\moment\locale\hu.js" />
+    <Content Include="wwwroot\lib\moment\locale\hy-am.js" />
+    <Content Include="wwwroot\lib\moment\locale\id.js" />
+    <Content Include="wwwroot\lib\moment\locale\is.js" />
+    <Content Include="wwwroot\lib\moment\locale\it-ch.js" />
+    <Content Include="wwwroot\lib\moment\locale\it.js" />
+    <Content Include="wwwroot\lib\moment\locale\ja.js" />
+    <Content Include="wwwroot\lib\moment\locale\jv.js" />
+    <Content Include="wwwroot\lib\moment\locale\ka.js" />
+    <Content Include="wwwroot\lib\moment\locale\kk.js" />
+    <Content Include="wwwroot\lib\moment\locale\km.js" />
+    <Content Include="wwwroot\lib\moment\locale\kn.js" />
+    <Content Include="wwwroot\lib\moment\locale\ko.js" />
+    <Content Include="wwwroot\lib\moment\locale\ku.js" />
+    <Content Include="wwwroot\lib\moment\locale\ky.js" />
+    <Content Include="wwwroot\lib\moment\locale\lb.js" />
+    <Content Include="wwwroot\lib\moment\locale\lo.js" />
+    <Content Include="wwwroot\lib\moment\locale\lt.js" />
+    <Content Include="wwwroot\lib\moment\locale\lv.js" />
+    <Content Include="wwwroot\lib\moment\locale\me.js" />
+    <Content Include="wwwroot\lib\moment\locale\mi.js" />
+    <Content Include="wwwroot\lib\moment\locale\mk.js" />
+    <Content Include="wwwroot\lib\moment\locale\ml.js" />
+    <Content Include="wwwroot\lib\moment\locale\mn.js" />
+    <Content Include="wwwroot\lib\moment\locale\mr.js" />
+    <Content Include="wwwroot\lib\moment\locale\ms-my.js" />
+    <Content Include="wwwroot\lib\moment\locale\ms.js" />
+    <Content Include="wwwroot\lib\moment\locale\mt.js" />
+    <Content Include="wwwroot\lib\moment\locale\my.js" />
+    <Content Include="wwwroot\lib\moment\locale\nb.js" />
+    <Content Include="wwwroot\lib\moment\locale\ne.js" />
+    <Content Include="wwwroot\lib\moment\locale\nl-be.js" />
+    <Content Include="wwwroot\lib\moment\locale\nl.js" />
+    <Content Include="wwwroot\lib\moment\locale\nn.js" />
+    <Content Include="wwwroot\lib\moment\locale\pa-in.js" />
+    <Content Include="wwwroot\lib\moment\locale\pl.js" />
+    <Content Include="wwwroot\lib\moment\locale\pt-br.js" />
+    <Content Include="wwwroot\lib\moment\locale\pt.js" />
+    <Content Include="wwwroot\lib\moment\locale\ro.js" />
+    <Content Include="wwwroot\lib\moment\locale\ru.js" />
+    <Content Include="wwwroot\lib\moment\locale\sd.js" />
+    <Content Include="wwwroot\lib\moment\locale\se.js" />
+    <Content Include="wwwroot\lib\moment\locale\si.js" />
+    <Content Include="wwwroot\lib\moment\locale\sk.js" />
+    <Content Include="wwwroot\lib\moment\locale\sl.js" />
+    <Content Include="wwwroot\lib\moment\locale\sq.js" />
+    <Content Include="wwwroot\lib\moment\locale\sr-cyrl.js" />
+    <Content Include="wwwroot\lib\moment\locale\sr.js" />
+    <Content Include="wwwroot\lib\moment\locale\ss.js" />
+    <Content Include="wwwroot\lib\moment\locale\sv.js" />
+    <Content Include="wwwroot\lib\moment\locale\sw.js" />
+    <Content Include="wwwroot\lib\moment\locale\ta.js" />
+    <Content Include="wwwroot\lib\moment\locale\te.js" />
+    <Content Include="wwwroot\lib\moment\locale\tet.js" />
+    <Content Include="wwwroot\lib\moment\locale\tg.js" />
+    <Content Include="wwwroot\lib\moment\locale\th.js" />
+    <Content Include="wwwroot\lib\moment\locale\tl-ph.js" />
+    <Content Include="wwwroot\lib\moment\locale\tlh.js" />
+    <Content Include="wwwroot\lib\moment\locale\tr.js" />
+    <Content Include="wwwroot\lib\moment\locale\tzl.js" />
+    <Content Include="wwwroot\lib\moment\locale\tzm-latn.js" />
+    <Content Include="wwwroot\lib\moment\locale\tzm.js" />
+    <Content Include="wwwroot\lib\moment\locale\ug-cn.js" />
+    <Content Include="wwwroot\lib\moment\locale\uk.js" />
+    <Content Include="wwwroot\lib\moment\locale\ur.js" />
+    <Content Include="wwwroot\lib\moment\locale\uz-latn.js" />
+    <Content Include="wwwroot\lib\moment\locale\uz.js" />
+    <Content Include="wwwroot\lib\moment\locale\vi.js" />
+    <Content Include="wwwroot\lib\moment\locale\x-pseudo.js" />
+    <Content Include="wwwroot\lib\moment\locale\yo.js" />
+    <Content Include="wwwroot\lib\moment\locale\zh-cn.js" />
+    <Content Include="wwwroot\lib\moment\locale\zh-hk.js" />
+    <Content Include="wwwroot\lib\moment\locale\zh-tw.js" />
+    <Content Include="wwwroot\lib\moment\moment-with-locales.js" />
+    <Content Include="wwwroot\lib\moment\moment-with-locales.min.js" />
+    <Content Include="wwwroot\lib\moment\moment.js" />
+    <Content Include="wwwroot\lib\moment\moment.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAccount.aspx.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAccount.aspx.designer.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCurrency.aspx.cs">
+      <DependentUpon>AddCurrency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCurrency.aspx.designer.cs">
+      <DependentUpon>AddCurrency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHomePage.aspx.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHomePage.aspx.designer.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.aspx.cs">
+      <DependentUpon>Currency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Currency.aspx.designer.cs">
+      <DependentUpon>Currency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyBuying.aspx.cs">
+      <DependentUpon>CurrencyBuying.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CurrencyBuying.aspx.designer.cs">
+      <DependentUpon>CurrencyBuying.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencySelling.aspx.cs">
+      <DependentUpon>CurrencySelling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CurrencySelling.aspx.designer.cs">
+      <DependentUpon>CurrencySelling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Deposit.aspx.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Deposit.aspx.designer.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forbidden.aspx.cs">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forbidden.aspx.designer.cs">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserHomePage.aspx.cs">
+      <DependentUpon>UserHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserHomePage.aspx.designer.cs">
+      <DependentUpon>UserHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionHistory.aspx.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TransactionHistory.aspx.designer.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionReport.aspx.cs">
+      <DependentUpon>TransactionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TransactionReport.aspx.designer.cs">
+      <DependentUpon>TransactionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAccount.aspx.cs">
+      <DependentUpon>UpdateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAccount.aspx.designer.cs">
+      <DependentUpon>UpdateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCurrency.aspx.cs">
+      <DependentUpon>UpdateCurrency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCurrency.aspx.designer.cs">
+      <DependentUpon>UpdateCurrency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAccount.aspx.cs">
+      <DependentUpon>ViewAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAccount.aspx.designer.cs">
+      <DependentUpon>ViewAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCurrency.aspx.cs">
+      <DependentUpon>ViewCurrency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCurrency.aspx.designer.cs">
+      <DependentUpon>ViewCurrency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Withdrawal.aspx.cs">
+      <DependentUpon>Withdrawal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Withdrawal.aspx.designer.cs">
+      <DependentUpon>Withdrawal.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libman.json" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="wwwroot\lib\font-awesome\css\font-awesome.css.map" />
+    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="wwwroot\lib\core-js\core.min.js.map" />
+    <Content Include="wwwroot\lib\core-js\library.min.js.map" />
+    <Content Include="wwwroot\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\lib\bootstrap-datetimepicker\css\bootstrap-datetimepicker-standalone.min.css.map" />
+    <Content Include="wwwroot\lib\core-js\shim.min.js.map" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54153</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
